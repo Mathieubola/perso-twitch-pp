@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> Choose your profile picture </title>
+</head>
+<body>
+    <h1>Hello {{ username }}</h1>
+    <h2>Choose your profile picture from the following</h2>
+    <ol>
+        {% for index in range(images|length) %}
+            <li>
+                <img src="{{ images[index] }}" alt="image" width="100" height="100">
+            </li>
+        {% endfor %}
+    </ol>
+    <form method="post">
+        <select name="image">
+            {% for index in range(images|length) %}
+                <option value="{{ images[index] }}">{{ index + 1 }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
