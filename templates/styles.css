@@ -1,0 +1,144 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Custom style */
+body {
+    background-image: url('./img/watermelon.jpg');
+    color: white;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+h1 {
+    font-size: 4rem;
+    line-height: 3rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h2 {
+    font-size: 2rem;
+    line-height: 3rem;
+    margin-bottom: 2rem;
+}
+
+a {
+    color:grey;
+}
+
+a:active, a:focus {
+    color:white;
+}
+
+p{
+    margin-bottom: 1rem;
+}
+
+.canards{
+    display: flex;
+    justify-content: center;
+    max-width: 65%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.canard {
+    margin: 15px;
+    position: relative;
+}
+
+.canard img{
+    border-radius: 100%;
+}
+
+.canard input[type=radio]{
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.canard label {
+    cursor: pointer;
+}
+
+.canard label img {
+    border: transparent 4px solid;
+    opacity: 0.8;
+}
+
+.canard label:checked {
+    background: red;
+}
+
+.canard input[type="radio"]:checked+label img {
+    border: 4px greenyellow solid;
+    opacity: 1;
+}
+
+button[type=submit]{
+    display: block;
+    margin: 20px auto;
+    border: 1px darkgreen solid;
+    background: white;
+    color: darkgreen;
+    padding: 10px;
+    font-size: 1rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    cursor: pointer;
+}
