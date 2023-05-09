@@ -1,4 +1,3 @@
 flask
 Flask-Dance
-pillow
 python-dotenv

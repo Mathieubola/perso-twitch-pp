@@ -4,12 +4,12 @@ services:
     image: melon
     build: .
     container_name: melon
-    ports:
-      - 5000:5000
+    expose:
+      - 5000
     env_file:
       - .env
     volumes:
-      - ./images:/app/images
+      - ./static:/app/static
       - ./data:/app/data
     networks:
       - nginx_backend

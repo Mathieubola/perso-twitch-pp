@@ -1,4 +1,5 @@
 .env
+venv
 data
-images
-templates/images
+static/img
+static/duck_images

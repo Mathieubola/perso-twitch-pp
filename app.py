@@ -6,11 +6,12 @@ from os import getenv, path, listdir
 from dotenv import load_dotenv
 load_dotenv()
 
-app = Flask(__name__, static_folder=getenv('UPLOAD_FOLDER'))
-app.secret_key = getenv("SECRET_KEY")
-
 address = getenv("ADDRESS")
-image_folder = getenv("UPLOAD_FOLDER")
+static_folder = getenv("STATIC_FOLDER")
+duck_folder = path.join(static_folder, "duck_images")
+
+app = Flask(__name__, static_folder=static_folder)
+app.secret_key = getenv("SECRET_KEY")
 
 # Set up Twitch authentication
 twitch_blueprint = make_twitch_blueprint(
@@ -40,9 +41,9 @@ def choose_image():
         user_info = twitch.get("/helix/users").json()
         twitch_username = user_info["data"][0]["login"].lower()
         if request.method == 'GET':
-            choices = listdir(getenv('UPLOAD_FOLDER'))
+            choices = listdir(duck_folder)
             choices = [
-                path.join(image_folder, choice)
+                path.join(duck_folder, choice)
                 for choice in choices
                 if choice.endswith(".png") or choice.endswith(".jpg")]
             return render_template("choose.html", images=choices, username=twitch_username)
