@@ -48,11 +48,11 @@ def choose_image():
                 if choice.endswith(".png") or choice.endswith(".jpg")]
             return render_template("choose.html", images=choices, username=twitch_username)
         else:
-            choice = request.form.get('image', -1)
+            choice = request.form.get('canard', -1)
             print("Choice:", choice)
 
             if choice == -1:
-                return "No image selected"
+                return "No image selected " + str(request.form)
 
             with open("./data/choices.json", 'r') as f:
                 choices = json.load(f)
@@ -69,10 +69,10 @@ def choose_image():
 def get_image(twitch_username):
     with open("./data/choices.json", 'r') as f:
         choices = json.load(f)
-    
+
     print(twitch_username)
 
-    choice = choices.get(twitch_username.lower(), "static/duck_images/Sans_titre.jpg")
+    choice = choices.get(twitch_username.lower(), path.join(duck_folder, "Sans_titre.jpg"))
     return send_file(choice)
 
 if __name__ == '__main__':
