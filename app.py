@@ -65,8 +65,9 @@ def choose_image():
             return "Image selected"
 
 # Image retrieval endpoint
+@app.route('/img/<twitch_username>/<idk>')
 @app.route('/img/<twitch_username>')
-def get_image(twitch_username):
+def get_image(twitch_username, idk=None):
     with open("./data/choices.json", 'r') as f:
         choices = json.load(f)
 

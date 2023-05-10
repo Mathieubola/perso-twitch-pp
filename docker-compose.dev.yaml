@@ -1,0 +1,13 @@
+version: '3.1'
+services:
+  melon:
+    image: melon
+    build: .
+    container_name: melon
+    ports:
+      - "5000:5000"
+    env_file:
+      - .env
+    volumes:
+      - ./static:/app/static
+      - ./data:/app/data
