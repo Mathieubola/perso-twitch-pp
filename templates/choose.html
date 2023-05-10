@@ -20,5 +20,13 @@
                 <button type="submit">Confirm</button>
             </form>
         </main>
+        {% if message %}
+            <div class="overlay" id="overlay">
+                <div class="message">
+                    <p>{{ message }}</p>
+                    <button type="button" onclick="document.getElementById('overlay').style.display='none'">OK</button>
+                </div>
+            </div>
+        {% endif %}
     </body>
 </html>
