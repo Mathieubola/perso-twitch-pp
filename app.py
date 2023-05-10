@@ -72,7 +72,7 @@ def get_image(twitch_username):
     
     print(twitch_username)
 
-    choice = choices.get(twitch_username.lower(), "images/Sans_titre.jpg")
+    choice = choices.get(twitch_username.lower(), "static/duck_images/Sans_titre.jpg")
     return send_file(choice)
 
 if __name__ == '__main__':
